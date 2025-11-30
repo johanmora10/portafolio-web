@@ -1,0 +1,483 @@
+@import "tailwindcss";
+
+/* ===========================
+   Variables
+=========================== */
+:root {
+  --color-night-bg: #0a0a12;
+  --color-night-text: #e6e6e9;
+  --color-night-subtext: #d1d1e0;
+
+  --color-light-bg: #f3f4f6;
+  --color-light-text: #1f2937;
+  --color-light-subtext: #4b5563;
+
+  --accent-gradient: linear-gradient(90deg, #b02aa6, #5f2bd7);
+  --accent-gradient-light: linear-gradient(90deg, #7c2ae8, #b02aa6);
+
+  --title-gradient-dark: linear-gradient(90deg, #d633ff, #7c2ae8);
+  --title-gradient-light: linear-gradient(90deg, #4c1d95, #7c2ae8);
+}
+
+/* ===========================
+   Reset global
+=========================== */
+html, body, #root, #__next {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  transition: all 0.5s ease;
+  background-color: var(--color-night-bg);
+  color: var(--color-night-text);
+}
+
+/* ===========================
+   Contenedor principal
+=========================== */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  padding-top: 4rem;
+}
+
+/* ===========================
+   Títulos grandes
+=========================== */
+.text-main-title, .huge-title {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1;
+  background: var(--title-gradient-dark);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -1px;
+  margin: 0.5rem 0;
+  text-shadow: 0 0 5px rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+}
+
+/* ===========================
+   Texto secundario
+=========================== */
+.text-secondary {
+  color: var(--color-night-subtext);
+  transition: color 0.3s ease;
+}
+
+/* ===========================
+   Colores de acento
+=========================== */
+.text-accent {
+  color: #b34be0;
+  transition: color 0.3s ease;
+}
+
+/* ===========================
+   Botones primarios
+=========================== */
+.btn-primary {
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 500;
+  background: var(--accent-gradient);
+  color: white;
+  box-shadow: 0 0 12px rgba(176,42,166,0.5);
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(176,42,166,0.7);
+}
+
+/* ===========================
+   Iconos de redes
+=========================== */
+.btn-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+}
+.btn-icon.github:hover {
+  border-color: #b34be0;
+  box-shadow: 0 0 10px #b34be0;
+}
+.btn-icon.linkedin:hover {
+  border-color: #0a66c2;
+  box-shadow: 0 0 10px #0a66c2;
+}
+.btn-icon .icon {
+  color: var(--color-night-text);
+}
+
+/* ===========================
+   Cards
+=========================== */
+.card {
+  background: rgba(20, 10, 20, 0.7);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+  max-width: 100%;
+  margin: 0.5rem 0;
+  color: var(--color-night-text);
+}
+.card:hover {
+  transform: translateY(-3px);
+  background: rgba(40, 20, 40, 0.85);
+}
+
+/* ===========================
+   Contact Section
+=========================== */
+#contact h3 {
+  font-size: 2rem;
+}
+#contact h4 {
+  font-size: 1.1rem;
+}
+#contact p {
+  font-size: 0.85rem;
+}
+
+/* ===========================
+   Grid de proyectos
+=========================== */
+.projects-grid {
+  display: grid;
+  gap: 2rem;
+  width: 90%;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===========================
+   Secciones
+=========================== */
+.section-title {
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #b34be0;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 5px rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+
+/* ===========================
+   Inputs y Textarea
+=========================== */
+.input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  color: var(--color-night-text);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+.input-field:focus {
+  outline: none;
+  border-color: #b34be0;
+  box-shadow: 0 0 8px #b34be0;
+}
+
+/* ===========================
+   Formulario
+=========================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: rgba(20,10,20,0.7);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+}
+
+/* ===========================
+   Botón flotante
+=========================== */
+.fab {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.fab button {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: var(--accent-gradient);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  transition: all 0.3s ease;
+}
+.fab button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(176,42,166,0.7);
+}
+
+/* ===========================
+   Skills futurista
+=========================== */
+.grid-futuristic {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  padding: 0 1rem;
+}
+@media (min-width: 768px) {
+  .grid-futuristic {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .grid-futuristic {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.card-futuristic {
+  background: rgba(20,10,30,0.6);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  box-shadow: 0 0 15px rgba(100, 0, 255, 0.2), 0 0 25px rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  animation: skillAppear 0.5s forwards;
+}
+.card-futuristic:hover {
+  transform: translateY(-10px) rotateX(5deg) rotateY(5deg) scale(1.1);
+  box-shadow: 0 0 30px #b02aa6, 0 0 40px #5f2bd7, 0 0 50px #ff00ff;
+  background: linear-gradient(135deg, rgba(176,42,166,0.6), rgba(95,43,215,0.6));
+}
+.card-futuristic span {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-night-text);
+  transition: color 0.3s ease;
+}
+.card-futuristic:hover span {
+  color: #fff;
+}
+@keyframes skillAppear {
+  0% { opacity: 0; transform: translateY(20px) scale(0.9); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ===========================
+   Modo luz
+=========================== */
+html.light {
+  background-color: var(--color-light-bg);
+  color: var(--color-light-text);
+}
+html.light body,
+html.light #__next,
+html.light .main-content {
+  background-color: var(--color-light-bg);
+  color: var(--color-light-text);
+}
+html.light .text-main-title,
+html.light .huge-title {
+  background: var(--title-gradient-light);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 8px rgba(124,42,232,0.4);
+}
+html.light .text-secondary {
+  color: var(--color-light-subtext);
+}
+html.light .text-accent {
+  color: #7c2ae8;
+}
+html.light .btn-primary {
+  background: var(--accent-gradient-light);
+  box-shadow: 0 0 15px rgba(124,42,232,0.5);
+}
+html.light .btn-icon {
+  border-color: rgba(0,0,0,0.2);
+}
+html.light .btn-icon .icon {
+  color: var(--color-light-text);
+}
+html.light .card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0,0,0,0.1);
+  color: var(--color-light-text);
+}
+html.light .input-field {
+  background: rgba(255,255,255,0.9);
+  border-color: rgba(0,0,0,0.2);
+  color: var(--color-light-text);
+}
+html.light .card-futuristic {
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(0,0,0,0.1);
+  color: var(--color-light-text);
+}
+html.light .card-futuristic span {
+  color: var(--color-light-text);
+}
+/* ===========================
+   Services Section
+=========================== */
+#services {
+  padding: 5rem 1.5rem;
+}
+
+#services .section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #b34be0;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-shadow: 0 0 5px rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+
+#services p {
+  max-width: 42rem;
+  margin: 0 auto 3rem auto;
+  color: var(--color-night-subtext);
+  text-align: center;
+}
+
+/* ===========================
+   Services Grid
+=========================== */
+.services-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===========================
+   Service Card
+=========================== */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  width: 100%;
+  max-width: 320px;
+  background: rgba(20,10,30,0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  color: var(--color-night-text);
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 25px #b02aa6, 0 0 35px #5f2bd7, 0 0 45px #ff00ff;
+  background: linear-gradient(135deg, rgba(176,42,166,0.6), rgba(95,43,215,0.6));
+}
+
+.service-card .icon {
+  font-size: 3rem;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--color-night-subtext);
+}
+
+/* ===========================
+   Glow effect for icons
+=========================== */
+.glow-icon {
+  text-shadow: 0 0 8px #b02aa6, 0 0 12px #5f2bd7, 0 0 18px #ff00ff;
+}
+
+/* ===========================
+   Light Mode
+=========================== */
+html.light #services p {
+  color: var(--color-light-subtext);
+}
+
+html.light .service-card {
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(0,0,0,0.1);
+  color: var(--color-light-text);
+}
+
+html.light .service-card p {
+  color: var(--color-light-subtext);
+}
+
+html.light .service-card .icon {
+  color: #7c2ae8;
+  text-shadow: 0 0 6px #7c2ae8, 0 0 12px #b02aa6;
+}
