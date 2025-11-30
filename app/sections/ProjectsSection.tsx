@@ -34,7 +34,7 @@ export default function ProjectsSection() {
         : 'My portfolio developed with Next.js, TypeScript, and Tailwind CSS.',
       category: 'Apps',
       image: '/porta.png',
-      url: 'https://johanmora.com',
+      url: 'https://portafolio-web-c141.vercel.app/',
     },
     {
       title: lang === 'es' ? 'Próximo proyecto' : 'Next Project',
