@@ -81,7 +81,7 @@ export default function Hero() {
             transition={{ duration: 1.6 }}
           >
             <a
-              href="/cv.pdf"
+              href="/CV_Johan_Mora_Software_Developer.pdf"
               download
               target="_blank"
               rel="noopener noreferrer"
