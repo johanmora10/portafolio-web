@@ -50,7 +50,7 @@ export default function Navbar() {
       <div className="relative max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo futurista con glow pulsante */}
         <h1 className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-600 animate-text-glow cursor-pointer">
-          Johan
+          Johan Mora
         </h1>
 
         {/* Links desktop */}
