@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useMemo } from 'react';
 import Image from 'next/image';
@@ -19,7 +19,7 @@ export default function Hero() {
   const blackHoleColors = ["#FF5500", "#FFB700", "#FFFFFF"];
 
   const stableClusters = [
-    { x: -10, y: -40, size: 340, count: 580, speed: 95, palette: palettes[2] },   
+    { x: -10, y: -40, size: 340, count: 580, speed: 95, palette: palettes[2] },  
     { x: -620, y: -320, size: 120, count: 180, speed: 60, palette: palettes[0] }, 
     { x: -780, y: 220, size: 110, count: 140, speed: 65, palette: palettes[4] },  
   ];
@@ -116,7 +116,7 @@ export default function Hero() {
         ))}
 
         {stableClusters.map((cluster, cIndex) => (
-          <div key={`stable-${cIndex}`} className="absolute animate-galaxy-drift" style={{ left: `calc(50% + ${cluster.x}px)`, top: `calc(50% + ${cluster.y}px)` }}>
+          <div key={`stable-${cIndex}`} className="absolute animate-galaxy-drift hidden md:block" style={{ left: `calc(50% + ${cluster.x}px)`, top: `calc(50% + ${cluster.y}px)` }}>
             {Array.from({ length: cluster.count }).map((_, i) => {
               const dist = Math.pow(Math.random(), 1.6) * cluster.size;
               const color = cluster.palette[Math.floor(Math.random() * cluster.palette.length)];
@@ -147,64 +147,64 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-        <div className="flex flex-col space-y-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
+        <div className="flex flex-col space-y-6 sm:space-y-8">
           <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tighter text-transparent bg-clip-text animate-rainbow-flow bg-[length:300%_300%] bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-indigo-400 filter drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tighter text-transparent bg-clip-text animate-rainbow-flow bg-[length:300%_300%] bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-indigo-400 filter drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
               {t.mainTitle}
             </h1>
           </motion.div>
 
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="space-y-6">
-            <p className="text-slate-200 text-lg md:text-xl max-w-xl font-medium leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+            <p className="text-slate-200 text-base sm:text-lg md:text-xl max-w-xl font-medium leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
               {t.descr}
             </p>
             <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 backdrop-blur-md px-4 py-1.5 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.3)]">
-              <span className="relative flex h-2 w-2">
+              <span className="relative flex h-2 w-2 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
-              <p className="text-gray-300 text-xs font-bold tracking-wider uppercase font-mono">{t.location}</p>
+              <p className="text-gray-300 text-[10px] sm:text-xs font-bold tracking-wider uppercase font-mono">{t.location}</p>
             </div>
           </motion.div>
 
-          <div className="flex flex-wrap items-center gap-5">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-5">
             <PremiumButton href="https://es.fiverr.com/sellers/johan_mora_tech/edit" label="Fiverr" sub="Contratar Experto" icon={<span className="text-[#1dbf73] font-black italic text-xl">fi</span>} color="#1dbf73" />
             <PremiumButton href="https://www.workana.com/freelancer/3ed48637fba9edee8896cd06f5cf16b3" label="Workana" sub="Ver Portafolio" icon={<span className="text-[#207bf2] font-black text-xl font-sans">W</span>} color="#207bf2" />
             <PremiumButton href="https://contra.com/johan_camelo_zdz26kbz/work?r=johan_camelo_zdz26kbz" label="Contra" sub="Hire Me" icon={<span className="text-[#00E6A0] font-black text-xl font-sans">C</span>} color="#00E6A0" />
           </div>
 
-          <div className="bg-black/30 border border-white/10 backdrop-blur-md rounded-2xl p-6 flex flex-row items-center justify-between shadow-[0_15px_35px_rgba(0,0,0,0.6)] w-full max-w-xl">
+          <div className="bg-black/30 border border-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 flex flex-row items-center justify-between shadow-[0_15px_35px_rgba(0,0,0,0.6)] w-full max-w-xl">
             {t.stats.map((stat, i) => (
               <div key={i} className="flex flex-row items-center flex-1 justify-center first:justify-start last:justify-end">
                 <div className="flex flex-col items-start">
                   <div className="flex items-center gap-1.5">
                     <span className="w-1 h-1 rounded-full bg-[#e879f9] shadow-[0_0_8px_#e879f9]" />
-                    <span className="text-3xl md:text-4xl font-black bg-gradient-to-b from-white via-white to-[#d8b4fe] bg-clip-text text-transparent tracking-tighter filter drop-shadow-[0_2px_12px_rgba(168,85,247,0.4)] select-none">{stat.n}</span>
+                    <span className="text-2xl sm:text-3xl md:text-4xl font-black bg-gradient-to-b from-white via-white to-[#d8b4fe] bg-clip-text text-transparent tracking-tighter filter drop-shadow-[0_2px_12px_rgba(168,85,247,0.4)] select-none">{stat.n}</span>
                   </div>
-                  <span className="text-[9px] md:text-[10px] text-purple-300 font-black tracking-[0.12em] uppercase font-mono mt-1.5 opacity-90">{stat.l}</span>
+                  <span className="text-[8px] sm:text-[9px] md:text-[10px] text-purple-300 font-black tracking-[0.08em] sm:tracking-[0.12em] uppercase font-mono mt-1.5 opacity-90">{stat.l}</span>
                 </div>
-                {i < t.stats.length - 1 && <div className="h-10 w-[1px] bg-gradient-to-b from-transparent via-white/15 to-transparent mx-auto hidden sm:block" />}
+                {i < t.stats.length - 1 && <div className="h-8 sm:h-10 w-[1px] bg-gradient-to-b from-transparent via-white/15 to-transparent mx-auto hidden sm:block" />}
               </div>
             ))}
           </div>
         </div>
 
-        <div className="relative flex items-center justify-center h-[600px] md:h-[800px]">
-          <motion.div animate={{ y: [0, -15, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} className="z-20 w-48 h-48 md:w-64 md:h-64 bg-gradient-to-b from-purple-500 to-blue-600 p-[2px] rounded-full shadow-[0_0_50px_rgba(168,85,247,0.3)]">
+        <div className="relative flex items-center justify-center h-[450px] sm:h-[600px] md:h-[800px] w-full mt-8 lg:mt-0">
+          <motion.div animate={{ y: [0, -15, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} className="z-20 w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-gradient-to-b from-purple-500 to-blue-600 p-[2px] rounded-full shadow-[0_0_50px_rgba(168,85,247,0.3)]">
             <div className="w-full h-full bg-[#050110] rounded-full overflow-hidden relative border-2 border-white/10">
                <Image src="/profile.png" alt="Johan" fill className="object-cover scale-110" priority />
             </div>
           </motion.div>
 
-          <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none">
+          <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none scale-[0.65] sm:scale-85 md:scale-100">
             {techOrbits.map((tech, i) => (
               <div key={i} className="absolute flex items-center justify-center">
                 <div className="absolute border-[2px] rounded-full opacity-[0.35]" style={{ width: tech.radius * 2, height: tech.radius * 2, borderColor: tech.color, boxShadow: `0 0 22px ${tech.color}40` }} />
                 <motion.div className="absolute" style={{ width: tech.radius * 2, height: tech.radius * 2 }} animate={{ rotate: 360 }} transition={{ duration: tech.duration, repeat: Infinity, ease: "linear" }}>
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <div className="bg-[#000000] border-2 rounded-full px-3.5 py-1 flex items-center gap-2 shadow-[0_4px_20px_rgba(0,0,0,0.9)]" style={{ borderColor: tech.color }}>
-                      <div className="relative flex h-2 w-2">
+                      <div className="relative flex h-2 w-2 shrink-0">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-100" style={{ backgroundColor: tech.color }} />
                         <span className="relative inline-flex rounded-full h-2 w-2" style={{ backgroundColor: tech.color }} />
                       </div>
@@ -238,17 +238,17 @@ export default function Hero() {
 
 function PremiumButton({ href, label, sub, icon, color }: { href: string, label: string, sub: string, icon: any, color: string }) {
   return (
-    <a href={href} target="_blank" className="relative group block">
+    <a href={href} target="_blank" className="relative group block w-full sm:w-auto">
       <div className="absolute -inset-0.5 rounded-xl blur opacity-20 group-hover:opacity-70 transition duration-500" style={{ backgroundColor: color }} />
-      <div className="relative flex items-center gap-3.5 bg-[#09061a] border border-white/10 px-5 py-3 rounded-xl transition-all group-hover:border-white/30 shadow-[0_5px_20px_rgba(0,0,0,0.8)]">
-        <div className="w-9 h-9 rounded-lg bg-white/[0.04] flex items-center justify-center border border-white/10 group-hover:scale-105 transition-transform" style={{ boxShadow: `inset 0 0 10px ${color}15` }}>
+      <div className="relative flex items-center gap-3.5 bg-[#09061a] border border-white/10 px-4 sm:px-5 py-3 rounded-xl transition-all group-hover:border-white/30 shadow-[0_5px_20px_rgba(0,0,0,0.8)]">
+        <div className="w-9 h-9 rounded-lg bg-white/[0.04] flex items-center justify-center border border-white/10 group-hover:scale-105 transition-transform shrink-0" style={{ boxShadow: `inset 0 0 10px ${color}15` }}>
           {icon}
         </div>
         <div className="flex flex-col">
-          <span className="text-white font-black text-base leading-none tracking-wide">{label}</span>
+          <span className="text-white font-black text-sm sm:text-base leading-none tracking-wide">{label}</span>
           <span className="text-[9px] text-gray-400 mt-1 uppercase tracking-widest font-black font-mono">{sub}</span>
         </div>
       </div>
     </a>
   );
-}
+} 
